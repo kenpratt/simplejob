@@ -41,6 +41,8 @@ SimpleJob::Worker.start do
 end
 </pre>
 
+### Run
+
 <pre>
 $ ruby -rubygems producer.rb
 $ ruby -rubygems consumer.rb
