@@ -44,5 +44,26 @@ module SimpleJob
     def subscribe(queue, &proc)
       queue.subscribe({ :ack => true }, &proc)
     end
+
+    private
+
+    def log
+      Client.log
+    end
+
+    def self.log
+      @logger ||= setup_logger
+    end
+
+    def self.setup_logger
+      if defined?(LOGGER)
+        LOGGER
+      elsif defined?(Rails.logger)
+        Rails.logger
+      else
+        Logger.new(STDOUT)
+      end
+    end
+
   end
 end

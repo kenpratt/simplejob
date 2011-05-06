@@ -19,7 +19,3 @@ module SimpleJob
   end
 
 end
-
-def log
-  Logger.new(STDOUT)
-end
