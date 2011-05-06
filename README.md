@@ -3,13 +3,11 @@ simplejob
 
 Painless job queueing, backed by AMQP.
 
-The design goals were:
-
 * Super simple interface
 * Robust jobs that never get lost
-* Jobs don't get marked complete until they are finished (they survive reboots)
-* One job queue per worker pool, with jobs mapped to that queue (for easy monitoring)
-* Jobs which throw exceptions are logged and removed, preventing infinite job loops
+* Jobs don't get marked complete until they are finished (they survive reboots/kill -9)
+* One work queue per worker pool, with one or more job names mapped to each work queue (for easy monitoring)
+* Jobs which throw exceptions are logged and removed, preventing infinite job-retry loops
 
 Installation
 ------------
@@ -18,14 +16,12 @@ Installation
 $ gem install simplejob
 </pre>
 
-Hello World
------------
+Example
+-------
 
 Start your [RabbitMQ](http://www.rabbitmq.com/) server (install one if necessary).
 
-<pre>
-$ edit producer.rb
-</pre>
+### Producer
 
 <pre>
 require "simplejob"
@@ -33,9 +29,7 @@ require "simplejob"
 SimpleJob.send("hello")
 </pre>
 
-<pre>
-$ edit consumer.rb
-</pre>
+### Consumer
 
 <pre>
 require "simplejob"
@@ -48,14 +42,11 @@ end
 </pre>
 
 <pre>
-$ ruby -rubygems consumer.rb
-</pre>
-
-<pre>
 $ ruby -rubygems producer.rb
+$ ruby -rubygems consumer.rb
 </pre>
 
 More examples
 -------------
 
-See the [examples directory](http://github.com/kenpratt/simple-job-queue/tree/master/examples).
+See the [examples directory](http://github.com/kenpratt/simplejob/tree/master/examples).
