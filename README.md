@@ -14,6 +14,8 @@ The design goals were:
 Hello World
 -----------
 
+Start your [RabbitMQ](http://www.rabbitmq.com/) server (install one if necessary).
+
 <pre>
 producer.rb:
 
