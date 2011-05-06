@@ -13,7 +13,14 @@ module SimpleJob
 
         # start processing jobs
         start_handler_loop
+
+        log.info "[worker] Started"
       end
+    end
+
+    def stop
+      super
+      log.info "[worker] Stopped"
     end
 
     def handle(key, &proc)
