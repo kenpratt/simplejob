@@ -1,14 +1,6 @@
 # encoding: utf-8
 
 require 'rubygems'
-require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
-end
 require 'rake'
 
 require 'jeweler'
@@ -21,7 +13,9 @@ Jeweler::Tasks.new do |gem|
   gem.description = "A simple AMQP-backed job queuing system."
   gem.email = "ken@kenpratt.net"
   gem.authors = ["Ken Pratt"]
-  # dependencies defined in Gemfile
+  gem.add_dependency "activesupport", ">= 3.0.1"
+  gem.add_dependency "json", ">= 1.5.1"
+  gem.add_dependency "amqp", "0.7.1"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
