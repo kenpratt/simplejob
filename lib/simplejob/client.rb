@@ -45,6 +45,13 @@ module SimpleJob
       queue.subscribe({ :ack => true }, &proc)
     end
 
+    alias_method :orig_send, :send
+    def send(topic, props = {})
+      raise "Message properties should be a Hash" unless props.kind_of?(Hash)
+      log.info "[simplejob] New job: #{topic}, #{props.inspect}"
+      publish(topic, props.to_json)
+    end
+
     private
 
     def log
