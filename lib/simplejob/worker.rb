@@ -1,5 +1,3 @@
-require "active_support/core_ext/hash"
-
 module SimpleJob
   class Worker < Client
     def start(opts, &proc)

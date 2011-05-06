@@ -1,5 +1,3 @@
-require "amqp"
-
 module SimpleJob
   DEFAULT_EXCHANGE_NAME = "simplejob"
 
