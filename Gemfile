@@ -1,7 +1,8 @@
 source "http://rubygems.org"
-# Add dependencies required to use your gem here.
-# Example:
-#   gem "activesupport", ">= 2.3.5"
+
+gem "activesupport", ">= 3.0.1"
+gem "json", ">= 1.5.1"
+gem "amqp", "0.7.1"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
