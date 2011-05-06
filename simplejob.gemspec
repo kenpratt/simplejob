@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simplejob}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Ken Pratt}]
@@ -25,6 +25,9 @@ Gem::Specification.new do |s|
     "examples/basic/README.md",
     "examples/basic/consumer.rb",
     "examples/basic/producer.rb",
+    "examples/chained_jobs/README.md",
+    "examples/chained_jobs/consumer.rb",
+    "examples/chained_jobs/producer.rb",
     "examples/multiple_jobs/README.md",
     "examples/multiple_jobs/drink_consumer.rb",
     "examples/multiple_jobs/food_consumer.rb",
@@ -36,6 +39,7 @@ Gem::Specification.new do |s|
     "lib/simplejob.rb",
     "lib/simplejob/client.rb",
     "lib/simplejob/worker.rb",
+    "simplejob.gemspec",
     "test/helper.rb",
     "test/test_simplejob.rb"
   ]
