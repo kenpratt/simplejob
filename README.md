@@ -12,9 +12,9 @@ Painless job queueing, backed by AMQP.
 Installation
 ------------
 
-<pre>
+```sh
 $ gem install simplejob
-</pre>
+```
 
 Example
 -------
@@ -23,15 +23,15 @@ Start your [RabbitMQ](http://www.rabbitmq.com/) server (install one if necessary
 
 ### Producer
 
-<pre>
+```ruby
 require "simplejob"
 
 SimpleJob.send("hello")
-</pre>
+```
 
 ### Consumer
 
-<pre>
+```ruby
 require "simplejob"
 
 SimpleJob::Worker.start do
@@ -39,14 +39,14 @@ SimpleJob::Worker.start do
     puts "got it!"
   end
 end
-</pre>
+```
 
 ### Run
 
-<pre>
+```sh
 $ ruby -rubygems producer.rb
 $ ruby -rubygems consumer.rb
-</pre>
+```
 
 More examples
 -------------
