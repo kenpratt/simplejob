@@ -36,7 +36,6 @@ module SimpleJob
     def start_handler_loop
       subscribe(@queue) do |headers, body|
         unless AMQP.closing?
-          puts headers.inspect
           topic = headers.properties[:routing_key]
 
           begin
