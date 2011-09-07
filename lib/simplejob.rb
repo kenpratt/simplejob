@@ -5,6 +5,7 @@ require "active_support/core_ext/hash"
 
 require "simplejob/client"
 require "simplejob/worker"
+require "simplejob/hash_extensions"
 
 module SimpleJob
 
