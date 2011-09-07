@@ -48,7 +48,7 @@ module SimpleJob
     alias_method :orig_send, :send
     def send(topic, props = {})
       raise "Message properties should be a Hash" unless props.kind_of?(Hash)
-      log.info "[simplejob] New job: #{topic}, #{props.inspect}"
+      log.info "[simplejob] New job: #{topic}, #{props.truncated_inspect}"
       publish(topic, props.to_json)
     end
 
