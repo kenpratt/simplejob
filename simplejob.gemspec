@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simplejob}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Ken Pratt}]
-  s.date = %q{2011-07-11}
+  s.date = %q{2011-09-07}
   s.description = %q{A simple AMQP-backed job queuing system.}
   s.email = %q{ken@kenpratt.net}
   s.extra_rdoc_files = [
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
     "examples/wildcard_handlers/wiretap.rb",
     "lib/simplejob.rb",
     "lib/simplejob/client.rb",
+    "lib/simplejob/hash_extensions.rb",
     "lib/simplejob/worker.rb",
     "simplejob.gemspec",
     "test/helper.rb",
