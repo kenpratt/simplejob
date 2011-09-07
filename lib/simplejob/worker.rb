@@ -44,7 +44,7 @@ module SimpleJob
 
             props = JSON.parse(body).with_indifferent_access
             props[:topic] = topic
-            log.info "[worker] Props: #{props.inspect}"
+            log.info "[worker] Props: #{props.truncated_inspect}"
 
             if handler = find_handler(topic)
               handler.call(props)
