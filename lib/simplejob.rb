@@ -10,8 +10,8 @@ require "simplejob/hash_extensions"
 module SimpleJob
 
   # Send a work request
-  def self.send(topic, props = {})
-    Client.start do
+  def self.send(topic, props = {}, client_opts = {})
+    Client.start(client_opts) do
       send(topic, props)
       stop
     end
